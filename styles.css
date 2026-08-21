@@ -47,13 +47,14 @@ button, input, select, textarea { font: inherit; }
 .hero-meta strong, .hero-meta span { display: block; }
 .hero-meta strong { font-family: "Space Mono", monospace; font-size: 0.9rem; }
 .hero-meta span { color: var(--muted); font-size: 0.78rem; }
-.countdown { max-width: 590px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
-.countdown-label { display: block; margin-bottom: 10px; color: var(--yellow); font-family: "Space Mono", monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.countdown-banner { color: var(--ink); background: var(--yellow); border-bottom: 1px solid rgba(21, 21, 21, 0.22); }
+.countdown-banner-inner { display: flex; align-items: center; justify-content: center; gap: 28px; min-height: 76px; }
+.countdown-label { display: block; color: var(--ink); font-family: "Space Mono", monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.countdown-grid div { padding: 10px 12px; background: var(--ink-soft); }
+.countdown-grid div { min-width: 68px; padding: 8px 10px; background: rgba(21, 21, 21, 0.1); }
 .countdown-grid strong, .countdown-grid span { display: block; }
 .countdown-grid strong { font-family: "Space Mono", monospace; font-size: 1.25rem; line-height: 1; }
-.countdown-grid span { margin-top: 5px; color: var(--muted); font-size: 0.68rem; }
+.countdown-grid span { margin-top: 5px; color: #5c501d; font-size: 0.68rem; }
 
 .hero-panel { display: flex; justify-content: flex-end; }
 .event-card { width: min(445px, 100%); padding: 28px; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); transform: rotate(2deg); }
@@ -133,9 +134,12 @@ button, input, select, textarea { font: inherit; }
   .hero-meta, .agenda-grid, .story-grid, .stats-grid, .form-row { grid-template-columns: 1fr; }
   .hero-meta { display: grid; }
   .hero-meta li { min-width: 0; }
-  .countdown-grid { gap: 5px; }
-  .countdown-grid div { padding: 9px 7px; }
-  .countdown-grid strong { font-size: 1.05rem; }
+  .countdown-banner-inner { gap: 12px; min-height: 70px; }
+  .countdown-label { max-width: 92px; font-size: 0.6rem; line-height: 1.25; }
+  .countdown-grid { gap: 4px; }
+  .countdown-grid div { min-width: 0; padding: 8px 5px; }
+  .countdown-grid strong { font-size: 1rem; }
+  .countdown-grid span { font-size: 0.58rem; }
   .nav-cta { display: none; }
   .section { padding: 78px 0; }
   .two-column, .register-grid { gap: 36px; }
