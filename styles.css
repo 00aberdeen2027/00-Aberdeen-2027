@@ -47,6 +47,13 @@ button, input, select, textarea { font: inherit; }
 .hero-meta strong, .hero-meta span { display: block; }
 .hero-meta strong { font-family: "Space Mono", monospace; font-size: 0.9rem; }
 .hero-meta span { color: var(--muted); font-size: 0.78rem; }
+.countdown { max-width: 590px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.countdown-label { display: block; margin-bottom: 10px; color: var(--yellow); font-family: "Space Mono", monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.countdown-grid div { padding: 10px 12px; background: var(--ink-soft); }
+.countdown-grid strong, .countdown-grid span { display: block; }
+.countdown-grid strong { font-family: "Space Mono", monospace; font-size: 1.25rem; line-height: 1; }
+.countdown-grid span { margin-top: 5px; color: var(--muted); font-size: 0.68rem; }
 
 .hero-panel { display: flex; justify-content: flex-end; }
 .event-card { width: min(445px, 100%); padding: 28px; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); transform: rotate(2deg); }
@@ -126,6 +133,9 @@ button, input, select, textarea { font: inherit; }
   .hero-meta, .agenda-grid, .story-grid, .stats-grid, .form-row { grid-template-columns: 1fr; }
   .hero-meta { display: grid; }
   .hero-meta li { min-width: 0; }
+  .countdown-grid { gap: 5px; }
+  .countdown-grid div { padding: 9px 7px; }
+  .countdown-grid strong { font-size: 1.05rem; }
   .nav-cta { display: none; }
   .section { padding: 78px 0; }
   .two-column, .register-grid { gap: 36px; }
