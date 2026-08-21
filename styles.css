@@ -6,6 +6,8 @@
   --red: #e33e31;
   --red-dark: #a92e29;
   --yellow: #f3c84b;
+  --saltire: #005eb8;
+  --granite: #9ca8b0;
   --white: #fffdf7;
   --muted: #b8b0a4;
   --line: rgba(255, 253, 247, 0.2);
@@ -21,10 +23,14 @@ a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 
-.site-header { position: sticky; top: 0; z-index: 10; background: rgba(21, 21, 21, 0.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.site-header { position: sticky; top: 0; z-index: 10; background: rgba(21, 21, 21, 0.94); border-bottom: 2px solid var(--saltire); backdrop-filter: blur(14px); }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 78px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.02em; }
-.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; color: var(--white); background: var(--red); font-family: "Space Mono", monospace; font-size: 1rem; font-weight: 700; transform: rotate(-7deg); }
+.brand-mark { position: relative; display: grid; place-items: center; width: 42px; height: 42px; overflow: hidden; color: var(--ink); background: var(--saltire); font-family: "Space Mono", monospace; font-size: 0.86rem; font-weight: 700; transform: rotate(-7deg); }
+.brand-mark::before, .brand-mark::after { content: ""; position: absolute; width: 138%; height: 7px; background: var(--white); }
+.brand-mark::before { transform: rotate(45deg); }
+.brand-mark::after { transform: rotate(-45deg); }
+.brand-mark span { position: relative; z-index: 1; }
 .main-nav { display: flex; align-items: center; gap: 24px; color: #d2ccc2; font-size: 0.9rem; }
 .main-nav a:hover, .footer-links a:hover { color: var(--yellow); }
 
@@ -35,7 +41,7 @@ button, input, select, textarea { font: inherit; }
 .button-secondary { color: var(--white); border: 1px solid var(--line); background: transparent; }
 .button-secondary:hover { border-color: var(--yellow); }
 
-.hero { position: relative; overflow: hidden; padding: 92px 0 68px; background: var(--ink); }
+.hero { position: relative; overflow: hidden; padding: 92px 0 68px; background: radial-gradient(circle at 88% 20%, rgba(0, 94, 184, 0.2), transparent 28%), var(--ink); }
 .hero::after { content: "00"; position: absolute; right: -18px; bottom: -88px; color: rgba(255, 253, 247, 0.045); font-family: "Space Mono", monospace; font-size: 25rem; line-height: 0.8; font-weight: 700; }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 64px; }
 .eyebrow, .section-tag { margin: 0 0 18px; color: var(--yellow); font-family: "Space Mono", monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -47,7 +53,7 @@ button, input, select, textarea { font: inherit; }
 .hero-meta strong, .hero-meta span { display: block; }
 .hero-meta strong { font-family: "Space Mono", monospace; font-size: 0.9rem; }
 .hero-meta span { color: var(--muted); font-size: 0.78rem; }
-.countdown-banner { color: var(--ink); background: var(--yellow); border-bottom: 1px solid rgba(21, 21, 21, 0.22); }
+.countdown-banner { color: var(--ink); background: linear-gradient(90deg, var(--yellow) 0 72%, var(--granite) 72% 100%); border-bottom: 1px solid rgba(21, 21, 21, 0.22); }
 .countdown-banner-inner { display: flex; align-items: center; justify-content: center; gap: 28px; min-height: 76px; }
 .countdown-label { display: block; color: var(--ink); font-family: "Space Mono", monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
