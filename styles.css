@@ -30,7 +30,6 @@ button, input, select, textarea { font: inherit; }
 .brand-mark::before, .brand-mark::after { content: ""; position: absolute; width: 138%; height: 7px; background: var(--white); }
 .brand-mark::before { transform: rotate(45deg); }
 .brand-mark::after { transform: rotate(-45deg); }
-.brand-mark span { position: relative; z-index: 1; }
 .main-nav { display: flex; align-items: center; gap: 24px; color: #d2ccc2; font-size: 0.9rem; }
 .main-nav a:hover, .footer-links a:hover { color: var(--yellow); }
 
@@ -65,6 +64,9 @@ button, input, select, textarea { font: inherit; }
 .hero-panel { display: flex; justify-content: flex-end; }
 .event-card { width: min(445px, 100%); padding: 28px; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); transform: rotate(2deg); }
 .event-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.round-table-lockup { display: flex; align-items: center; gap: 10px; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--dark-line); }
+.round-table-lockup img { width: 42px; height: 42px; object-fit: contain; }
+.round-table-lockup span { color: #776e63; font-family: "Space Mono", monospace; font-size: 0.62rem; line-height: 1.25; text-transform: uppercase; }
 .chip, .date-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0.3rem 0.58rem; font-family: "Space Mono", monospace; font-size: 0.66rem; font-weight: 700; }
 .chip { color: var(--white); background: var(--red); }
 .date-pill { color: var(--ink); background: var(--yellow); }
