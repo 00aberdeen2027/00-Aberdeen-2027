@@ -16,22 +16,23 @@
     />
     <link rel="stylesheet" href="styles.css?v=round-table-review" />
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="00 Aberdeen 2027 home">
+        <a class="brand" href="#top" aria-label="00 Aberdeen 2027 home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>00 Aberdeen 2027</span>
-        </div>
+        </a>
 
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#about">The weekend</a>
           <a href="#programme">Programme</a>
           <a href="#aberdeen">Aberdeen</a>
+          <a href="#venue">Travel</a>
           <a href="#register">Register</a>
         </nav>
 
-        <a class="button button-primary nav-cta" href="#register">Register interest</a>
+        <a class="button button-primary nav-cta" href="#register">Get tickets</a>
       </div>
     </header>
 
@@ -60,7 +61,7 @@
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#register">Register interest</a>
+              <a class="button button-primary" href="#register">Get tickets</a>
               <a class="button button-secondary" href="#programme">See the weekend</a>
             </div>
 
@@ -285,37 +286,29 @@
           <div>
             <p class="section-tag">Registration</p>
             <h2>Put your name around the table.</h2>
-            <p class="register-copy">Register your interest and we will send you the next details, including the weekend package, accommodation, and payment information.</p>
-            <p class="form-note">This form is a static preview and does not submit yet.</p>
+            <p class="register-copy">Choose your weekend package below, then complete your secure booking with Zeffy.</p>
+            <p class="form-note">Secure ticketing handled by Zeffy.</p>
           </div>
 
-          <form class="registration-form" action="#" method="post">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-
-            <div class="form-row">
-              <div>
-                <label for="table">Round Table / club</label>
-                <input id="table" name="table" type="text" placeholder="e.g. RT 00 Aberdeen" />
-              </div>
-              <div>
-                <label for="guests">Guests</label>
-                <select id="guests" name="guests">
-                  <option value="one">Just me</option>
-                  <option value="two">Me and a partner</option>
-                  <option value="group">My Table / group</option>
-                </select>
+          <div class="zeffy-embed" aria-label="00 Aberdeen 2027 ticketing">
+            <div data-zeffy-embed data-form-url="/embed/ticketing/00-aberdeen--2027"></div>
+            <div data-zeffy-embed-fallback class="zeffy-embed-fallback" style="display:none;">
+              <div class="zeffy-embed-frame">
+                <iframe
+                  title="Ticketing form powered by Zeffy"
+                  data-zeffy-embed-src="https://www.zeffy.com/embed/ticketing/00-aberdeen--2027"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowpaymentrequest
+                  allowtransparency="true">
+                </iframe>
               </div>
             </div>
-
-            <label for="message">Anything we should know?</label>
-            <textarea id="message" name="message" rows="4" placeholder="Dietary requirements, accessibility, or a question"></textarea>
-
-            <button class="button button-primary" type="submit">Register interest</button>
-          </form>
+            <script
+              src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+              onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});">
+            </script>
+          </div>
         </div>
       </section>
     </main>
@@ -326,6 +319,7 @@
         <div class="footer-links">
           <a href="#about">About</a>
           <a href="#programme">Programme</a>
+          <a href="#venue">Travel</a>
           <a href="#register">Register</a>
         </div>
       </div>
@@ -334,12 +328,14 @@
     <script>
       const eventStart = new Date("2027-05-06T00:00:00+01:00").getTime();
       const countdown = document.querySelector(".countdown-banner");
+      let countdownInterval;
 
       function updateCountdown() {
         const remaining = eventStart - Date.now();
 
         if (remaining <= 0) {
           countdown.innerHTML = '<div class="container countdown-banner-inner"><span class="countdown-label">00 Aberdeen 2027 is here</span></div>';
+          clearInterval(countdownInterval);
           return;
         }
 
@@ -355,7 +351,7 @@
       }
 
       updateCountdown();
-      setInterval(updateCountdown, 1000);
+      countdownInterval = setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>
